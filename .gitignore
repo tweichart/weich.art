@@ -1,0 +1,15 @@
+/node_modules
+/storage/*.key
+/vendor
+/.idea
+public/css/*.css
+public/js/*.js
+public/images/*
+public/*.php
+public/fonts/*
+npm-debug.log
+yarn-error.log
+.env
+mix-manifest.json
+package-lock.json
+.DS_Store
