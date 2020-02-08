@@ -27,7 +27,7 @@ if (count($_POST) > 0) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="My name is Tobias Weichart, or Toby for short and I'm a Senior Software Engineer."/>
-    <meta name="keywords" content="PHP,JavaScript,Laravel,VueJS,Docker,Kubernetes,Programming">
+    <meta name="keywords" content="PHP,JavaScript,Laravel,VueJS,Docker,Kubernetes,Programming,Symfony,Angular">
     <meta name="author" content="Tobias Weichart">
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="/css/app.css">
@@ -81,7 +81,7 @@ if (count($_POST) > 0) {
     <div class="row parallax" id="home">
         <div class="col-12 text-center p-5">
             <h1>Tobias Weichart</h1>
-            <h3>Software Enthusiast</h3>
+            <h3>Senior Software Engineer</h3>
         </div>
     </div>
     <div class="row" id="about">
@@ -97,8 +97,8 @@ if (count($_POST) > 0) {
                     <div class="row">
                         <div class="col-12 col-md-4 p-3 p-md-2 d-flex flex-row align-items-start justify-content-around">
                             <span class="description ">Residence: </span>
-                            <a href="https://goo.gl/maps/VKwRrQ1DH592" target="_blank">
-                                Regensburg, Germany
+                            <a href="https://goo.gl/maps/gZ1oqNa2JZKvQBnr9" target="_blank">
+                                Galway, Ireland
                             </a>
                         </div>
                         <div class="col-12 col-md-4 p-3 p-md-2 d-flex flex-row align-items-start justify-content-center">
@@ -107,8 +107,8 @@ if (count($_POST) > 0) {
                         </div>
                         <div class="col-12 col-md-4 p-3 p-md-2 d-flex flex-row align-items-start justify-content-around">
                             <span class="description">Workplace: </span>
-                            <a href="https://goo.gl/maps/VKwRrQ1DH592" target="_blank">
-                                Regensburg, Germany
+                            <a href="https://goo.gl/maps/gZ1oqNa2JZKvQBnr9" target="_blank">
+                                Galway, Ireland
                             </a>
                         </div>
                     </div>
@@ -244,16 +244,32 @@ if (count($_POST) > 0) {
                 </div>
             </div>
             <div class="row timeline d-flex flex-column m-0">
+		<div class="col-md-6 col-12">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title p-2">
+                                Senior Application Developer @
+                                Supply Chain Formulae
+                            </h5>
+			    <h6 class="card-subtitle mb-2 text-muted">
+                                (July 2019 - present)
+                            </h6>
+                            <div class="card-text p-2 text-justify">
+				Mostly working with Symfony + Angular + AWS, more to come soon!
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-6 col-12">
                     <div class="card bg-light">
                         <div class="card-body">
                             <h5 class="card-title p-2">
-                                Project Manager Frontend Technologies @
+                                Team Leader Frontend Technologies @
                                 <a href="https://www.internetx.com/en/" class="text-dark" target="_blank">InterNetX
                                     GmbH</a>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted">
-                                Head of new Frontend Projects (March 2018 - present)
+                                Head of new Frontend Projects (March 2018 - July 2019)
                             </h6>
                             <div class="card-text p-2 text-justify">
                                 By the experience gained in the last years with modern web technologies I was assigned
@@ -427,7 +443,7 @@ if (count($_POST) > 0) {
     </div>
     <footer class="row">
         <div class="col-12 d-flex align-items-center justify-content-center">
-            <span>&copy; 2018 All rights reserved |
+            <span>&copy; 2019 All rights reserved |
                 <button type="button" class="btn btn-link p-0 m-0 text-capitalize" data-toggle="modal"
                         data-target="#imprint-modal">Imprint</button>
             </span>
