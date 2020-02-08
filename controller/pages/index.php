@@ -26,7 +26,8 @@ if (count($_POST) > 0) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="My name is Tobias Weichart, or Toby for short and I'm a Senior Software Engineer."/>
+    <meta name="description"
+          content="My name is Tobias Weichart, or Toby for short and I'm a Senior Software Engineer."/>
     <meta name="keywords" content="PHP,JavaScript,Laravel,VueJS,Docker,Kubernetes,Programming,Symfony,Angular">
     <meta name="author" content="Tobias Weichart">
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
@@ -43,7 +44,8 @@ if (count($_POST) > 0) {
     <meta property="og:image" content="https://www.tobias-weichart.de/images/logo_square.jpg"/>
     <meta property="og:image:width" content="600"/>
     <meta property="og:image:height" content="600"/>
-    <meta property="og:description" content="My name is Tobias Weichart, or Toby for short and I'm a Senior Software Engineer."/>
+    <meta property="og:description"
+          content="My name is Tobias Weichart, or Toby for short and I'm a Senior Software Engineer."/>
     <meta property="og:site_name" content="Tobias Weichart"/>
 </head>
 <body>
@@ -244,18 +246,38 @@ if (count($_POST) > 0) {
                 </div>
             </div>
             <div class="row timeline d-flex flex-column m-0">
-		<div class="col-md-6 col-12">
+                <div class="col-md-6 col-12">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title p-2">
+                                Senior Software Engineer @
+                                <a href="https://www.essentialskillz.com/" class="text-dark" target="_blank">
+                                    EssentialSkillz</a>
+                            </h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                (December 2019 - present)
+                            </h6>
+                            <div class="card-text p-2 text-justify">
+                                A new start into the world of E-Learning, mostly based on PHP/VueJS and AWS!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
                     <div class="card bg-light">
                         <div class="card-body">
                             <h5 class="card-title p-2">
                                 Senior Application Developer @
                                 Supply Chain Formulae
                             </h5>
-			    <h6 class="card-subtitle mb-2 text-muted">
-                                (July 2019 - present)
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                (July 2019 - November 2019)
                             </h6>
                             <div class="card-text p-2 text-justify">
-				Mostly working with Symfony + Angular + AWS, more to come soon!
+                                Mostly working with PHP and AWS, my skill set could be extended with a deeper dive into
+                                the Symfony framework. I've contributed to the modernisation, restructuring and
+                                reworking of the applications but could also assist in changing internal workflows, so
+                                that a modern style of software developing could be achieved.
                             </div>
                         </div>
                     </div>
@@ -443,7 +465,7 @@ if (count($_POST) > 0) {
     </div>
     <footer class="row">
         <div class="col-12 d-flex align-items-center justify-content-center">
-            <span>&copy; 2019 All rights reserved |
+            <span>&copy; 2020 All rights reserved |
                 <button type="button" class="btn btn-link p-0 m-0 text-capitalize" data-toggle="modal"
                         data-target="#imprint-modal">Imprint</button>
             </span>
