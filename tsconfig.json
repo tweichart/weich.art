@@ -12,6 +12,11 @@
         "allowJs": true,
         "sourceMap": true,
         "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": true,
+        "forceConsistentCasingInFileNames": true,
+        "noUnusedLocals": false,
+        "strictNullChecks": true,
         "noEmit": true,
         "baseUrl": ".",
         "paths": {

@@ -6,10 +6,10 @@
         >
             <v-col class="text-center" cols="12">
                 <h1 class="text-xl-h1 text-md-h2 font-weight-black">
-                    {{ info.name }}
+                    {{ name }}
                 </h1>
                 <h2 class="text-xl-h3">
-                    {{ info.jobTitle }}
+                    {{ jobtitle }}
                 </h2>
             </v-col>
         </v-row>
@@ -17,19 +17,22 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
-import { namespace } from "nuxt-property-decorator";
+import { Vue, Component } from 'vue-property-decorator';
+import { namespace } from 'nuxt-property-decorator';
 
-const user = namespace("user");
+const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
     private height: number = 0;
-    private src: string = "";
+    private src: string = '';
     private sizes: Array<number> = [4096, 1920, 1280];
 
     @user.State
-    public info!: object;
+    public name!: string;
+
+    @user.State
+    public jobtitle!: string;
 
     public mounted() {
         if (process.client) {
@@ -41,7 +44,7 @@ export default class Banner extends Vue {
     }
 
     private getSmallestWidth(): number {
-        const width: number = (this.$refs.paral as Vue).$el.getElementsByTagName("img")[0].clientWidth;
+        const width: number = (this.$refs.paral as Vue).$el.getElementsByTagName('img')[0].clientWidth;
         for (const s of this.sizes.sort((a, b) => a - b)) {
             if (s >= width) {
                 return s;

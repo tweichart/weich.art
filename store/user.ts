@@ -1,18 +1,16 @@
-import { VuexModule, Module } from "vuex-module-decorators";
+import { VuexModule, Module } from 'vuex-module-decorators';
 
-interface UserData {
+export interface IUserState {
     name: string
-    jobTitle: string
+    jobtitle: string
 }
 
 @Module({
-    name: "user",
+    name: 'user',
     namespaced: true,
     stateFactory: true,
 })
-export default class User extends VuexModule {
-    public info: UserData = {
-        name: "Tobias Weichart",
-        jobTitle: "Senior Software Engineer"
-    }
-};
+export default class User extends VuexModule implements IUserState {
+    public name = 'Tobias Weichart';
+    public jobtitle = 'Senior Software Engineer';
+}

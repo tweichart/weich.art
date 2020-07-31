@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator";
-import Banner from "@/components/Banner.vue";
+import { Vue, Component } from 'nuxt-property-decorator';
+import Banner from '@/components/Banner.vue';
 
 @Component({
     components: {

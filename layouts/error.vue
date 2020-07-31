@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "nuxt-property-decorator";
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
 
 interface error {
     statusCode: number
@@ -22,8 +22,8 @@ interface error {
 
 @Component
 export default class Error extends Vue {
-    pageNotFound: string = "404 Not Found";
-    otherError: string = "An error occurred";
+    pageNotFound: string = '404 Not Found';
+    otherError: string = 'An error occurred';
 
     @Prop({ default: null }) readonly error!: error;
 
