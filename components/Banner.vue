@@ -1,5 +1,5 @@
 <template>
-    <v-parallax ref="paral" :key="height" :height="height" :src="src">
+    <v-parallax ref="paral" :srcset="srcset" :height="height">
         <v-row
             align="center"
             justify="center"
@@ -24,9 +24,7 @@ const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
-    private height: number = 0;
-    private src: string = '';
-    private sizes: Array<number> = [4096, 1920, 1280];
+    private sizes: Array<number> = [1280, 1920, 4096];
 
     @user.State
     public name!: string;
@@ -34,29 +32,29 @@ export default class Banner extends Vue {
     @user.State
     public jobtitle!: string;
 
-    public mounted() {
-        if (process.client) {
-            const imageWidth: number = this.getSmallestWidth();
-            const imageHeight: number = imageWidth * 0.665626;
-            this.height = window.innerHeight > imageHeight ? imageHeight : window.innerHeight;
-            this.src = require(`@/assets/banner-${imageWidth}w.jpg`);
-        }
+    get srcset(): string {
+        return this.sizes.map((s: number) => require(`@/assets/banner-${s}w.jpg`) + ' ' + s + 'w').join(', ');
     }
 
-    private getSmallestWidth(): number {
-        const width: number = (this.$refs.paral as Vue).$el.getElementsByTagName('img')[0].clientWidth;
-        for (const s of this.sizes.sort((a, b) => a - b)) {
-            if (s >= width) {
-                return s;
-            }
+    get height(): number {
+        return process.client ? window.innerHeight : 500;
+    }
+
+    mounted() {
+        if (window.innerHeight > window.innerWidth) {
+            (this.$refs.paral as Vue).$el.getElementsByTagName('img')[0].onload = (e) => {
+                const container = e.target as HTMLImageElement;
+                // @ts-ignore
+                container.style.top = container.style.transform.match(/(\d+)px/)[1] + 'px';
+            };
         }
-        return 0;
     }
 }
 </script>
 
 <style lang="scss" scoped>
-    .v-parallax {
-        width: 100%;
-    }
+.v-parallax {
+    width: 100vw;
+
+}
 </style>
