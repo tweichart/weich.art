@@ -5,7 +5,9 @@
                 <v-row justify="center">
                     <Banner />
                 </v-row>
-                <v-row id="spacing" />
+                <v-row id="spacing">
+                    <div>spacing content</div>
+                </v-row>
             </v-container>
         </v-main>
     </v-app>
@@ -33,6 +35,28 @@ export default class Index extends Vue {
 
     .container {
         padding: 0;
+        & > .row{
+            position: relative;
+            &:before {
+                position: absolute;
+                z-index: 0;
+                top: 0;
+                left: 10px;
+                right: 10px;
+                bottom: 0;
+                border: 10px solid black;
+                border-top: none;
+                border-bottom: none;
+                filter: blur(10px);
+                content: ''
+            }
+            & > *{
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background-color: white;
+            }
+        }
     }
 
     @media #{map-get($display-breakpoints, 'lg-and-up')} {
