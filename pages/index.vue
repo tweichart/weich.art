@@ -5,6 +5,9 @@
                 <v-row justify="center">
                     <Banner />
                 </v-row>
+                <v-row justify="center">
+                    <Description />
+                </v-row>
                 <v-row id="spacing">
                     <div>spacing content</div>
                 </v-row>
