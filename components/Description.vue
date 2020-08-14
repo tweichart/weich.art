@@ -3,8 +3,8 @@
         align="center"
         justify="center"
     >
-        <v-col class="text-center" cols="4">
-            <v-img :src="src"></v-img>
+        <v-col class="text-center img-container" cols="4">
+            <v-img v-img-circle="'white'" :contain="true" :src="src" />
         </v-col>
         <v-col class="text-center" cols="8">
             <p v-for="(paragraph, index) in description" :key="index">
@@ -36,9 +36,13 @@ export default class Banner extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.row{
+.row {
     background-color: #E5E5E5;
     margin-left: 0;
     margin-right: 0;
+}
+
+.img-container {
+    padding: 50px;
 }
 </style>

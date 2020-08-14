@@ -30,12 +30,17 @@ export default {
     /*
     ** Global CSS
     */
-    css: [],
+    css: [
+        '~/assets/global.css'
+    ],
     /*
     ** Plugins to load before mounting the App
     ** https://nuxtjs.org/guide/plugins
     */
-    plugins: [],
+    plugins: [
+        '~/plugins/decorators.ts',
+        '~/plugins/directives.ts'
+    ],
     /*
     ** Auto import components
     ** See https://nuxtjs.org/api/configuration-components

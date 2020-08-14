@@ -1,0 +1,13 @@
+/* v-img-square directive styling */
+div.v-image.v-image__image-square{
+    overflow: visible;
+}
+div.v-image.v-image__image-square div.v-image__image{
+    z-index: 1;
+}
+div.v-image.v-image__image-square div.v-image__image-background {
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    left: -8px;
+}
