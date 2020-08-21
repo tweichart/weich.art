@@ -23,21 +23,11 @@ const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
-    private sizes: Array<number> = [1280, 1920, 4096];
-
     @user.State
     public name!: string;
 
     @user.State
     public jobtitle!: string;
-
-    get srcset(): string {
-        return this.sizes.map((s: number) => require(`@/assets/banner-${s}w.jpg`) + ' ' + s + 'w').join(', ');
-    }
-
-    get src(): string {
-        return require('@/assets/banner-1280w.jpg');
-    }
 }
 </script>
 
