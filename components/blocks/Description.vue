@@ -12,10 +12,10 @@
             align="center"
             justify="center"
         >
-            <v-col class="text-center img-container d-none d-md-block" cols="4">
+            <v-col class="img-container d-none d-md-block" cols="4">
                 <v-img v-img-circle="'white'" :contain="true" :src="src" />
             </v-col>
-            <v-col class="text-center text-container" cols="8">
+            <v-col class="text-container" cols="8">
                 <p v-for="(paragraph, index) in description" :key="index">
                     {{ paragraph }}
                 </p>
