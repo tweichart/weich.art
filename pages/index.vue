@@ -5,11 +5,11 @@
                 <v-row justify="center">
                     <Banner />
                 </v-row>
-                <v-row justify="center">
+                <tilt-row justify="center">
                     <Description />
-                </v-row>
+                </tilt-row>
                 <v-row id="spacing">
-                    <div>spacing content</div>
+                    <v-row>spacing content</v-row>
                 </v-row>
             </v-container>
         </v-main>
@@ -18,34 +18,30 @@
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator';
-import Banner from '@/components/Banner.vue';
 
-@Component({
-    components: {
-        Banner
-    }
-})
-
+@Component
 export default class Index extends Vue {
 };
 </script>
 <style lang="scss">
-    @import '~vuetify/src/styles/settings/_variables';
+@import '~vuetify/src/styles/settings/_variables';
 
-    #spacing {
-        height: 2000px;
-    }
+#spacing {
+    height: 2000px;
+}
 
-    .container {
-        padding: 0;
-        & > .row{
-            position: relative;
+.container {
+    padding: 0;
+
+    & > .row {
+        position: relative;
+        @media #{map-get($display-breakpoints, 'md-and-up')} {
             &:before {
                 position: absolute;
                 z-index: 0;
                 top: 0;
-                left: 10px;
-                right: 10px;
+                left: 0;
+                right: 0;
                 bottom: 0;
                 border: 10px solid black;
                 border-top: none;
@@ -53,18 +49,26 @@ export default class Index extends Vue {
                 filter: blur(10px);
                 content: ''
             }
-            & > *{
-                width: 100%;
-                height: 100%;
-                z-index: 1;
-                background-color: white;
+        }
+        /* @media #{map-get($display-breakpoints, 'lg-and-up')} {
+            &:before {
+                left: 10px;
+                right: 10px;
             }
-        }
-    }
+        } */
 
-    @media #{map-get($display-breakpoints, 'lg-and-up')} {
-        .container {
-            max-width: map-get($grid-breakpoints, "lg");
+        & > * {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: white;
         }
     }
+}
+
+@media #{map-get($display-breakpoints, 'lg-and-up')} {
+    .container {
+        max-width: map-get($grid-breakpoints, "lg");
+    }
+}
 </style>
