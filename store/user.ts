@@ -14,23 +14,16 @@ export interface IUserState {
 export default class User extends VuexModule implements IUserState {
     public name = 'Tobias Weichart';
     public jobtitle = 'Senior Software Engineer';
-    public description = [`Hey pals, my name is Tobias Weichart, or Toby for short and I'm a programming enthusiast
-        always on the look out for cool technologies. Describing myself is somewhat a harder job than I thought,
-        so maybe my wife should do it, as she's quite successful with advertising me when I'm around. Maybe it's
-        the perspective... Well, let's try that...`,
-    `Toby is working in IT for quite some time now (started in ~2010, professionally) though he's always been
-        surrounded by IT stuff from his early childhood on. Being fascinated with the internals and the magic that
-        made computers do what they do he's always tried to understand the principle behind the things, still leaving
-        him most of the time clueless about why it's working the way it does. Enter the internetz. This funny invention
-        gave his thirst for knowledge the much needed saturation, explaining most of the things tiny Toby never could've
-         made sense of by himself!`,
-    `Few years in the future, Toby is now a coding guy, loving to solve the mysteries of bits and bytes, always
-        looking for new technologies or other neat things that he can dig into or read more about. Most of the time
-        he's working with PHP, JavaScript and CSS these days and frameworks are a little hobby of his, although there's
-        not always the need for them (quote: "Why isn't there an ES6 framework out now!?"). He's also very handsome and
-        people tensely like to listen to his eloquent statements being fascinated about his intelligent yet humble
-        personality with a hint of...`,
-    `Ok, let's cut it here, wrong direction... Whoever feels the need to see what I am all about can contact me via one
-        of the buttons below or just send me an e-mail at the bottom of the page. Looking forward to hear from you!`
+    public description = [`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris erat nisi, semper lobortis
+        dignissim eget, dapibus et lorem. Aenean varius tincidunt lobortis. Integer ipsum arcu, efficitur eget lorem
+        non, sollicitudin volutpat mauris. Cras varius velit lacinia ligula ullamcorper feugiat. Maecenas ultricies
+        vehicula hendrerit. Duis eget consequat nisl. Nunc iaculis, justo et fringilla consectetur, elit nisi dictum
+        purus, ac facilisis eros nulla in metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+        fringilla vehicula lectus non suscipit. Nunc sed tristique enim, at scelerisque lorem.`,
+    `Suspendisse imperdiet neque at laoreet dictum. Vivamus vestibulum nibh dui, vel suscipit elit pellentesque id. Ut
+        porta, diam in convallis tristique, urna mauris tincidunt risus, quis tincidunt neque lectus et lectus. Nullam
+        vitae tincidunt metus. Duis est libero, tempor ac libero lobortis, scelerisque sodales metus. Nulla vel pretium
+        ex. Donec quis fringilla nunc, id imperdiet lacus. Etiam et elit ut neque pharetra venenatis nec non nisi.
+        Phasellus facilisis sollicitudin quam vitae vestibulum.`
     ];
 }
