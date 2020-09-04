@@ -29,7 +29,8 @@
         },
         "types": [
             "@types/node",
-            "@nuxt/types"
+            "@nuxt/types",
+            "@plugins/types"
         ],
         "experimentalDecorators": true
     },

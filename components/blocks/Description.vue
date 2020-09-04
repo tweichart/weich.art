@@ -25,6 +25,7 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import { namespace } from 'nuxt-property-decorator';
+import { IBreakpointSizes } from '~/plugins/types.ts';
 
 const user = namespace('user');
 
@@ -43,21 +44,21 @@ export default class Banner extends Vue {
     @user.State
     public description!: string[];
 
-    get imgSizes() {
+    get imgSizes(): IBreakpointSizes {
         return {
-            xl: '4',
-            lg: '4',
-            md: '4',
-            cols: '12'
+            xl: 4,
+            lg: 4,
+            md: 4,
+            cols: 12
         };
     }
 
-    get textSizes() {
+    get textSizes(): IBreakpointSizes {
         return {
-            xl: '8',
-            lg: '8',
-            md: '8',
-            cols: '12'
+            xl: 8,
+            lg: 8,
+            md: 8,
+            cols: 12
         };
     }
 
