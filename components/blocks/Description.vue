@@ -1,27 +1,25 @@
 <template>
-    <div>
-        <v-row
-            align="center"
+    <v-row
+        v-resize="rerenderImg"
+        align="center"
+        justify="center"
+        class="description"
+    >
+        <v-col
+            :key="imgKey"
+            class="img-container"
+            align-item="center"
             justify="center"
-            class="text-center img-container d-block d-md-none"
-            cols="12"
+            v-bind="imgSizes"
         >
-            <v-img v-img-circle="'white'" :contain="true" :src="src" />
-        </v-row>
-        <v-row
-            align="center"
-            justify="center"
-        >
-            <v-col class="img-container d-none d-md-block" cols="4">
-                <v-img v-img-circle="'white'" :contain="true" :src="src" />
-            </v-col>
-            <v-col class="text-container" cols="8">
-                <p v-for="(paragraph, index) in description" :key="index">
-                    {{ paragraph }}
-                </p>
-            </v-col>
-        </v-row>
-    </div>
+            <v-img v-img-circle="'white'" :eager="true" :contain="true" :src="src" @load="rerenderImg" />
+        </v-col>
+        <v-col class="text-container" v-bind="textSizes">
+            <p v-for="(paragraph, index) in description" :key="index">
+                {{ paragraph }}
+            </p>
+        </v-col>
+    </v-row>
 </template>
 
 <script lang="ts">
@@ -33,6 +31,8 @@ const user = namespace('user');
 @Component
 export default class Banner extends Vue {
     private src: string = require('~/assets/logo_black.png');
+    private $vuetify: any;
+    private imgKey: string = '';
 
     @user.State
     public name!: string;
@@ -42,29 +42,41 @@ export default class Banner extends Vue {
 
     @user.State
     public description!: string[];
+
+    get imgSizes() {
+        return {
+            xl: '4',
+            lg: '4',
+            md: '4',
+            cols: '12'
+        };
+    }
+
+    get textSizes() {
+        return {
+            xl: '8',
+            lg: '8',
+            md: '8',
+            cols: '12'
+        };
+    }
+
+    rerenderImg(): void {
+        this.imgKey = this.$vuetify.breakpoint.name;
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '~vuetify/src/styles/settings/_variables';
-.row {
+.description {
     background-color: #E5E5E5;
-}
 
-.img-container {
-    padding: 50px;
-}
+    .img-container {
+        padding: 50px;
+    }
 
-.text-container {
-    padding: 25px;
-}
-
-@media #{map-get($display-breakpoints, 'md-and-down')} {
     .text-container {
-        max-width: 100%;
-        width: 100%;
-        flex: 0 0 90%;
+        padding: 25px;
     }
 }
-
 </style>

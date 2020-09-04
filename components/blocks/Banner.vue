@@ -33,6 +33,7 @@ export default class Banner extends Vue {
 
 <style lang="scss" scoped>
 .background {
+    height: 100vh;
     background: url('~assets/banner-1280w.jpg');
     background: -webkit-image-set(
             url('~assets/banner-800w.jpg') 0x,
@@ -43,6 +44,5 @@ export default class Banner extends Vue {
     background-position: center;
     background-size: cover;
     background-origin: content-box;
-    min-height: calc(100vh + 35px);
 }
 </style>

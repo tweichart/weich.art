@@ -24,7 +24,9 @@ const imgCircle: DirectiveOptions = {
         });
         Object.assign($el.style, {
             minWidth: size + 'px',
-            minHeight: size + 'px'
+            maxWidth: size + 'px',
+            minHeight: size + 'px',
+            maxHeight: size + 'px'
         });
         $el.appendChild($backgroundContainer);
     }
