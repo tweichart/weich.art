@@ -6,3 +6,33 @@ export interface IBreakpointSizes {
     xs?: number,
     cols?: number
 }
+
+interface IIcon {
+    icon: string,
+    text: string
+}
+
+export interface IIconMap {
+    [index: string]: IIcon | undefined,
+}
+
+interface Company {
+    name: string,
+    link?: string
+}
+
+export interface Job {
+    title: string,
+    company: Company,
+    start: string,
+    end?: string,
+    description: string,
+    tags: string[]
+}
+
+export interface IUserState {
+    name: string
+    jobtitle: string,
+    description: string[],
+    jobs: Job[]
+}

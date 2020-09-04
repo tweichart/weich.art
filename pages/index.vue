@@ -1,7 +1,7 @@
 <template>
     <v-app id="app">
         <v-main>
-            <v-container ref="container" class="fill-height">
+            <v-container class="fill-height app-container">
                 <Banner />
                 <Description />
                 <Timeline />
@@ -20,13 +20,13 @@ export default class Index extends Vue {
 <style lang="scss">
 @import '~vuetify/src/styles/settings/_variables';
 
-.container {
+.app-container {
     padding: 0;
 }
 
 //noinspection SassScssUnresolvedVariable
 @media #{map-get($display-breakpoints, 'lg-and-up')} {
-    .container {
+    .app-container {
         max-width: map-get($grid-breakpoints, "lg");
     }
 }

@@ -3,7 +3,7 @@
         v-resize="rerenderImg"
         align="center"
         justify="center"
-        class="description"
+        class="grey lighten-2"
     >
         <v-col
             :key="imgKey"
@@ -69,15 +69,11 @@ export default class Banner extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.description {
-    background-color: #E5E5E5;
+.img-container {
+    padding: 50px;
+}
 
-    .img-container {
-        padding: 50px;
-    }
-
-    .text-container {
-        padding: 25px;
-    }
+.text-container {
+    padding: 25px;
 }
 </style>
