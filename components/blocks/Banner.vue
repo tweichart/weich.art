@@ -1,48 +1,84 @@
 <template>
-    <v-row
-        align="center"
-        justify="center"
-        class="background"
-    >
-        <v-col class="text-center" cols="12">
-            <h1 class="text-xl-h1 text-md-h2 font-weight-black">
-                {{ name }}
-            </h1>
-            <h2 class="text-xl-h3">
-                {{ jobtitle }}
-            </h2>
-        </v-col>
-    </v-row>
+    <b-container fluid="xl">
+        <b-row align-v="center" class="text-container">
+            <b-col>
+                <h1 class="text-center font-weight-bold text-dark">
+                    {{ name }}
+                </h1>
+                <h2 class="text-center text-dark">
+                    {{ jobtitle }}
+                </h2>
+            </b-col>
+        </b-row>
+        <b-aspect ref="img" aspect="4096:2487" class="img-container" :style="{ left: left }">
+            <b-img :srcset="srcset" />
+        </b-aspect>
+    </b-container>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Ref } from 'vue-property-decorator';
 import { namespace } from 'nuxt-property-decorator';
 
 const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
+    private left: string = '0px';
+
+    @Ref('img') readonly img!: Vue
+
     @user.State
     public name!: string;
 
     @user.State
     public jobtitle!: string;
+
+    get srcset(): string {
+        return [800, 1280, 1920, 4096].map((s: number) => require(`~/assets/banner-${s}w.jpg`) + ` ${s}w`).join(', ');
+    }
+
+    setBannerOffset() {
+        const img: number = (this.img.$el as HTMLElement).clientWidth;
+        const win: number = window.innerWidth;
+        this.left = '-' + ((img / 2) - (win / 2)) + 'px';
+    }
+
+    mounted() {
+        if (!process.client) {
+            return;
+        }
+        window.addEventListener('resize', this.setBannerOffset);
+        this.setBannerOffset();
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-.background {
+div[class^='container-'] {
     height: 100vh;
-    background: url('~assets/banner-1280w.jpg');
-    background: -webkit-image-set(
-            url('~assets/banner-800w.jpg') 0x,
-            url('~assets/banner-1280w.jpg') 1x,
-            url('~assets/banner-1920w.jpg') 2x
-    );
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-origin: content-box;
+
+    div.row {
+        height: 100%;
+    }
+}
+
+.text-container {
+    position: relative;
+    z-index: 5;
+}
+
+.img-container {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    img {
+        min-width: 100vw;
+        min-height: 100vh;
+    }
 }
 </style>

@@ -33,6 +33,8 @@ export interface Job {
 export interface IUserState {
     name: string
     jobtitle: string,
-    description: string[],
+    birthday: Date,
+    location: string,
+    description: string,
     jobs: Job[]
 }

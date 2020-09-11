@@ -1,79 +1,50 @@
 <template>
-    <v-row
-        v-resize="rerenderImg"
-        align="center"
-        justify="center"
-        class="grey lighten-2"
-    >
-        <v-col
-            :key="imgKey"
-            class="img-container"
-            align-item="center"
-            justify="center"
-            v-bind="imgSizes"
-        >
-            <v-img v-img-circle="'white'" :eager="true" :contain="true" :src="src" @load="rerenderImg" />
-        </v-col>
-        <v-col class="text-container" v-bind="textSizes">
-            <p v-for="(paragraph, index) in description" :key="index">
-                {{ paragraph }}
-            </p>
-        </v-col>
-    </v-row>
+    <b-container fluid="xl">
+        <b-row>
+            <b-col cols="4">
+                <p>{{ description }}</p>
+            </b-col>
+            <b-col cols="4">
+                <b-avatar variant="light" :src="src" size="24rem" />
+            </b-col>
+            <b-col cols="4">
+                <p><b>Age: </b>{{ age }}</p>
+                <p><b>Location: </b>{{ location }}</p>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 import { namespace } from 'nuxt-property-decorator';
-import { IBreakpointSizes } from '~/plugins/types.ts';
 
 const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
     private src: string = require('~/assets/logo_black.png');
-    private $vuetify: any;
-    private imgKey: string = '';
 
     @user.State
-    public name!: string;
+    public description!: string;
 
     @user.State
-    public jobtitle!: string;
+    public location!: string;
 
     @user.State
-    public description!: string[];
+    public birthday!: Date;
 
-    get imgSizes(): IBreakpointSizes {
-        return {
-            xl: 4,
-            lg: 4,
-            md: 4,
-            cols: 12
-        };
-    }
-
-    get textSizes(): IBreakpointSizes {
-        return {
-            xl: 8,
-            lg: 8,
-            md: 8,
-            cols: 12
-        };
-    }
-
-    rerenderImg(): void {
-        this.imgKey = this.$vuetify.breakpoint.name;
+    get age() {
+        const ageDate = new Date(Date.now() - this.birthday.getTime());
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
     }
 }
 </script>
 
 <style lang="scss" scoped>
-.img-container {
-    padding: 50px;
-}
-
-.text-container {
-    padding: 25px;
+.b-avatar::v-deep .b-avatar-img img {
+    width: 95%;
+    height: auto;
+    border-radius: initial;
 }
 </style>
