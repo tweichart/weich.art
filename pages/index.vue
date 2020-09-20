@@ -9,6 +9,9 @@
         <b-container class="timeline">
             <Timeline />
         </b-container>
+        <b-container class="contact">
+            <Contact />
+        </b-container>
     </b-container>
 </template>
 
@@ -21,6 +24,13 @@ export default class Index extends Vue {
 </script>
 <style lang="scss">
 .main{
+    .container:nth-child(even){
+        background-color: $main-grey-bright;
+    }
+    .container:nth-child(odd){
+        background-color: $main-grey-dark;
+    }
+    // overlay scroll effect
     & > div.container:not(:first-child) {
         position: relative;
         z-index: 10;
@@ -28,12 +38,6 @@ export default class Index extends Vue {
         width: 100vw;
         margin-left: -15px;
         padding: 30px 15px;
-    }
-    .description{
-        background-color: $main-grey-bright;
-    }
-    .timeline{
-        background-color: $main-grey-dark;
     }
 }
 </style>

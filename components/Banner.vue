@@ -10,7 +10,7 @@
                 </h2>
             </b-col>
         </b-row>
-        <b-aspect ref="img" aspect="4096:2487" class="img-container" :style="{ left: left }">
+        <b-aspect ref="img" aspect="4096:2487" class="img-container" :style="{ left }">
             <b-img :srcset="srcset" />
         </b-aspect>
     </b-container>

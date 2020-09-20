@@ -1,10 +1,10 @@
 import { VuexModule, Module } from 'vuex-module-decorators';
-import { IUserState } from '@/plugins/types';
+import { IUserState, ICompany } from '@/plugins/types';
 // @ts-ignore
-import { faAngular, faAws, faBitbucket, faDocker, faGit, faGitlab, faJs, faLaravel, faNodeJs, faPhp, faSymfony, faVuejs, faWikipediaW } from '@fortawesome/free-brands-svg-icons';
+import { faAngular, faAws, faBitbucket, faDocker, faGit, faGithub, faGitlab, faJs, faLaravel, faLinkedinIn, faNodeJs, faPhp, faSymfony, faTwitter, faVuejs, faWikipediaW } from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-library.add(faAngular, faAws, faBitbucket, faDocker, faGit, faGitlab, faJs, faLaravel, faNodeJs, faPhp, faSymfony, faVuejs, faWikipediaW);
+library.add(faAngular, faAws, faBitbucket, faDocker, faGit, faGithub, faGitlab, faJs, faLaravel, faLinkedinIn, faNodeJs, faPhp, faSymfony, faTwitter, faVuejs, faWikipediaW);
 
 @Module({
     name: 'user',
@@ -21,8 +21,9 @@ export default class User extends VuexModule implements IUserState {
     public location = 'Galway, Ireland';
 
     public description = [
-        'Hey, my name is Tobias and I\'m a Senior Software Engineer.',
-        'What I do? Front & Backend, DevOps and most important learning every day!'
+        'Who I am? I\'m Tobias and I\'m a Senior Software Engineer.',
+        'What I do? Front & Backend, DevOps and most important: learning every day!',
+        'What I\'m looking for? New challenges and a chat with you!'
     ];
 
     public jobs = [{
@@ -31,8 +32,8 @@ export default class User extends VuexModule implements IUserState {
             name: 'EssentialSkillz',
             link: 'https://www.essentialskillz.com/'
         },
-        start: '12/2019',
-        end: 'present',
+        start: new Date('2019-12'),
+        end: new Date(),
         description: 'A new start into the world of E-Learning, mostly based on PHP/VueJS and AWS!',
         tags: ['vuejs', 'laravel', 'docker', 'aws', 'bitbucket']
     }, {
@@ -40,8 +41,8 @@ export default class User extends VuexModule implements IUserState {
         company: {
             name: 'Supply Chain Formulae'
         },
-        start: '07/2019',
-        end: '11/2019',
+        start: new Date('2019-07'),
+        end: new Date('2019-11'),
         description: `Mostly working with PHP and AWS, my skill set could be extended with a deeper dive into the
         Symfony framework. I've contributed to the modernisation, restructuring and reworking of the applications but
         could also assist in changing internal workflows, so that a modern style of software developing could be
@@ -53,8 +54,8 @@ export default class User extends VuexModule implements IUserState {
             name: 'InterNetX GmbH',
             link: 'https://www.internetx.com/en/'
         },
-        start: '03/2018',
-        end: '07/2019',
+        start: new Date('2018-03'),
+        end: new Date('2019-07'),
         description: `By the experience gained in the last years with modern web technologies I was assigned to lead
         the development of the redesign of one of the biggest platforms the company has. Still being responsible for
         the projects I've successfully supervised before, the complete rewrite of a stable yet aged frontend was
@@ -68,8 +69,8 @@ export default class User extends VuexModule implements IUserState {
             name: 'InterNetX GmbH',
             link: 'https://www.internetx.com/en/'
         },
-        start: '10/2015',
-        end: '03/2018',
+        start: new Date('2015-10'),
+        end: new Date('2018-03'),
         description: `Based on the latest web technologies (e.g. Laravel, Vue.js) my focus was set on a stable yet
         fully automated environment (Docker/Kubernetes + GitLab) with a good basis for everybody on the team to work
         with. New technologies are always welcome as long as everybody can learn them fast enough to get a real benefit
@@ -82,8 +83,8 @@ export default class User extends VuexModule implements IUserState {
             name: 'HalloWelt! GmbH',
             link: 'https://en.hallowelt.com/'
         },
-        start: '07/2013',
-        end: '09/2015',
+        start: new Date('2013-07'),
+        end: new Date('2015-09'),
         description: `The team developed a framework tailored to the needs of business customers based on the famous
         MediaWiki software. One part of the job was working closely with the customers to define and then implement
         their special needs for the software. The other part was the development of the core framework always looking
@@ -95,12 +96,23 @@ export default class User extends VuexModule implements IUserState {
             name: 'HalloWelt! GmbH',
             link: 'https://en.hallowelt.com/'
         },
-        start: '08/2010',
-        end: '07/2013',
+        start: new Date('2010-08'),
+        end: new Date('2013-07'),
         description: `I've started to learn all about the handicraft of software development here. Having a good basis
         is always important, so I've learned the most important things for a good and long lasting project. Having all
         of the IT before me (from soft- to hardware to networking) I could get a nice overview of the world of IT,
         always finding new ways to learn and to build up the knowledge I now have.`,
         tags: ['wikipedia-w', 'php', 'js', 'git']
     }];
+
+    public contacts = [{
+        icon: 'linkedin-in',
+        link: 'https://www.linkedin.com/in/tobias-weichart'
+    }, {
+        icon: 'twitter',
+        link: 'https://twitter.com/tweichart'
+    }, {
+        icon: 'github',
+        link: 'https://github.com/tweichart'
+    }]
 }

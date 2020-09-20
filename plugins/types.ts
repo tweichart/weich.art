@@ -1,31 +1,13 @@
-export interface IBreakpointSizes {
-    xl?: number,
-    lg?: number,
-    md?: number,
-    sm?: number,
-    xs?: number,
-    cols?: number
-}
-
-interface IIcon {
-    icon: string,
-    text: string
-}
-
-export interface IIconMap {
-    [index: string]: IIcon | undefined,
-}
-
-interface Company {
+export interface ICompany {
     name: string,
     link?: string
 }
 
-export interface Job {
+export interface IJob {
     title: string,
-    company: Company,
-    start: string,
-    end?: string,
+    company: ICompany,
+    start: Date,
+    end?: Date,
     description: string,
     tags: string[]
 }
@@ -36,5 +18,11 @@ export interface IUserState {
     birthday: Date,
     location: string,
     description: string[],
-    jobs: Job[]
+    jobs: IJob[],
+    contacts: IContact[]
+}
+
+export interface IContact {
+    icon: string,
+    link: string
 }
