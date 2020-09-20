@@ -28,9 +28,14 @@ export default {
     ** Global CSS
     */
     css: [
-        '@/assets/app.scss',
+        '@/assets/overrides.scss',
         '@fortawesome/fontawesome-svg-core/styles.css'
     ],
+    styleResources: {
+        scss: [
+            '~/assets/app.scss'
+        ]
+    },
     /*
     ** Plugins to load before mounting the App
     ** https://nuxtjs.org/guide/plugins
@@ -50,7 +55,8 @@ export default {
     */
     buildModules: [
         // Doc: https://github.com/nuxt-community/eslint-module
-        '@nuxt/typescript-build'
+        '@nuxt/typescript-build',
+        '@nuxtjs/style-resources'
     ],
     /*
     ** Nuxt.js modules
@@ -60,7 +66,7 @@ export default {
     ],
     bootstrapVue: {
         css: false, // Or `css: false`
-        //bootstrapVueCSS: false // Or `bvCSS: false`
+        // bootstrapVueCSS: false // Or `bvCSS: false`
     },
     /*
     ** Build configuration

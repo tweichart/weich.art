@@ -1,11 +1,2 @@
-@import 'node_modules/fontsource-kumbh-sans/400.css';
-@import 'node_modules/fontsource-kumbh-sans/700.css';
-$font-family-sans-serif: Kumbh Sans;
-$enable-responsive-font-sizes: true;
-
-/* $colors: (
-    "gray": $gray-600,
-    "gray-dark": $gray-800
-) !default; */
-
-@import "node_modules/bootstrap/scss/bootstrap";
+$main-grey-bright: #E5E5E5;
+$main-grey-dark: #D7D6D6;

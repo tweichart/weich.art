@@ -6,6 +6,9 @@
         <b-container class="description">
             <Description />
         </b-container>
+        <b-container class="timeline">
+            <Timeline />
+        </b-container>
     </b-container>
 </template>
 
@@ -27,7 +30,10 @@ export default class Index extends Vue {
         padding: 30px 15px;
     }
     .description{
-        background-color: #E5E5E5;
+        background-color: $main-grey-bright;
+    }
+    .timeline{
+        background-color: $main-grey-dark;
     }
 }
 </style>

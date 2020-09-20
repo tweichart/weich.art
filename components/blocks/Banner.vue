@@ -63,6 +63,10 @@ div[class^='container-'] {
     }
 }
 
+h1, h2{
+    text-shadow: 0 0 3px white;
+}
+
 .text-container {
     position: relative;
     z-index: 5;
