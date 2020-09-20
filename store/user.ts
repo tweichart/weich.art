@@ -14,14 +14,12 @@ export default class User extends VuexModule implements IUserState {
 
     public birthday = new Date('1989-02');
 
-    public location = 'Galway';
+    public location = 'Galway, Ireland';
 
-    public description =`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris erat nisi, semper lobortis
-        dignissim eget, dapibus et lorem. Aenean varius tincidunt lobortis. Integer ipsum arcu, efficitur eget lorem
-        non, sollicitudin volutpat mauris. Cras varius velit lacinia ligula ullamcorper feugiat. Maecenas ultricies
-        vehicula hendrerit. Duis eget consequat nisl. Nunc iaculis, justo et fringilla consectetur, elit nisi dictum
-        purus, ac facilisis eros nulla in metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        fringilla vehicula lectus non suscipit. Nunc sed tristique enim, at scelerisque lorem.`;
+    public description = [
+        'Hey, my name is Tobias and I\'m a Senior Software Engineer.',
+        'What I do? Front & Backend, DevOps and most important learning every day!'
+    ];
 
     public jobs = [{
         title: 'Senior Software Engineer',
