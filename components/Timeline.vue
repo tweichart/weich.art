@@ -1,16 +1,18 @@
 <template>
     <b-container fluid="xl" class="text-dark">
-        <h3 class="font-weight-bold">
+        <h3 class="font-weight-bold mb-4">
             Experience
         </h3>
         <b-row v-for="(job, i) of jobs" :key="i" class="block mb-md-5">
-            <b-col cols="12" md="4" align-self="baseline">
-                <b-card class="job-general">
-                    <h5 class="font-weight-bold">
+            <b-col cols="12" md="4" align-self="baseline" class="mt-4 mt-md-0">
+                <b-card no-body class="job-general p-4">
+                    <h5 class="font-weight-bold mb-0">
                         {{ job.title }}
                     </h5>
-                    <small class="text-muted">{{ formatDate(job.start) }} - {{ formatDate(job.end) }}</small>
-                    <div>
+                    <small class="text-muted">
+                        {{ formatDate(job.start) }} - {{ formatDate(job.end) }}
+                    </small>
+                    <div class="mt-4">
                         <font-awesome-icon
                             v-for="(icon, ii) of job.tags"
                             :key="ii"
@@ -22,16 +24,21 @@
                 </b-card>
             </b-col>
             <b-col cols="12" md="8" class="job-description" align-self="stretch">
-                <b-card>
-                    <h5 class="font-weight-bold company">
-                        <a v-if="job.company.link" :href="job.company.link" target="_blank" class="text-dark">
+                <b-card no-body class="pt-4 pb-4">
+                    <h5 class="font-weight-bold company mb-0">
+                        <a
+                            v-if="job.company.link"
+                            :href="job.company.link"
+                            target="_blank"
+                            class="text-dark text-decoration-none"
+                        >
                             {{ job.company.name }}
                         </a>
                         <span v-else>
                             {{ job.company.name }}
                         </span>
                     </h5>
-                    <p class="text-justify">
+                    <p class="text-justify m-0">
                         {{ job.description }}
                     </p>
                 </b-card>
@@ -48,8 +55,6 @@ const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
-    private src: string = require('~/assets/logo_black.png');
-
     @user.State
     public jobs!: IJob[];
 
@@ -65,17 +70,20 @@ export default class Banner extends Vue {
 </script>
 
 <style lang="scss" scoped>
-h3 {
-    margin-bottom: 30px;
-}
-
-h5 {
-    margin: 0;
-}
-
 .block {
+    // remove margin for last block
     &:last-of-type {
         margin-bottom: 0;
+        & > .job-description > .card{
+            padding-bottom: 10px !important;
+        }
+    }
+
+    // remove margin for first column present
+    &:first-of-type {
+        & > [class*='col'] {
+            margin-top: 0 !important;
+        }
     }
 
     [class*="col"] {
@@ -86,29 +94,19 @@ h5 {
         border: none;
         border-radius: 0;
         background-color: transparent;
-    }
 
-    .card.job-general {
-        background-color: $main-grey-bright;
-
-        .icon {
-            margin-right: 10px;
-            cursor: pointer;
+        &.job-general {
+            background-color: $main-grey-bright;
         }
     }
 
-    .job-description {
-        p {
-            margin-bottom: 0;
-        }
-
-        h5 {
-            margin-bottom: 1px;
-        }
+    .job-description h5 {
+        margin-bottom: 1px;
     }
 
-    .company > a {
-        text-decoration: none;
+    .icon {
+        margin-right: 10px;
+        cursor: pointer;
     }
 }
 </style>

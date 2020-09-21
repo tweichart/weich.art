@@ -1,30 +1,28 @@
 <template>
     <b-container fluid="xl" class="text-dark">
         <b-row align-v="center">
-            <b-col cols="4" class="block left text-left">
+            <b-col cols="12" sm="4" class="block left text-sm-left text-center pb-4 pb-sm-0">
                 <h5 class="font-weight-bold">
                     Description
                 </h5>
-                <p v-for="(paragraph, i) of description" :key="i" class="text-justify">
+                <p v-for="(paragraph, i) of description" :key="i" class="text-md-justify pb-2">
                     {{ paragraph }}
                 </p>
             </b-col>
-            <b-col cols="4" align-self="stretch">
+            <b-col cols="12" sm="4" class="pl-lg-5 pl-sm-2 pl-5 pr-lg-5 pr-sm-2 pr-5 align-middle">
                 <b-aspect :aspect="'1:1'">
                     <b-avatar variant="light" :src="src" size="100%" />
                 </b-aspect>
             </b-col>
-            <b-col cols="4" class="block right text-right">
+            <b-col cols="12" sm="4" class="block right text-sm-right text-center pt-4 pt-sm-0">
                 <b-row>
-                    <b-col>
+                    <b-col cols="4" sm="12">
                         <h5 class="font-weight-bold">
                             Name
                         </h5>
                         <p>{{ name }}</p>
                     </b-col>
-                </b-row>
-                <b-row>
-                    <b-col>
+                    <b-col cols="4" sm="12">
                         <h5 class="font-weight-bold">
                             Age
                         </h5>
@@ -32,9 +30,7 @@
                             {{ ageCount }}-ish
                         </p>
                     </b-col>
-                </b-row>
-                <b-row>
-                    <b-col>
+                    <b-col cols="4" sm="12">
                         <h5 class="font-weight-bold">
                             Location
                         </h5>
@@ -87,17 +83,14 @@ export default class Banner extends Vue {
 </script>
 
 <style lang="scss" scoped>
+// scale not-square images
 .b-avatar::v-deep .b-avatar-img img {
     width: 95%;
     height: auto;
     border-radius: initial;
 }
 
-.block.left {
-    padding-right: 30px;
-}
-
-.block.right {
-    padding-left: 30px;
+.block p{
+    margin-bottom: 0;
 }
 </style>
