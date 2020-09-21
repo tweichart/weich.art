@@ -3,34 +3,38 @@
         <h3 class="font-weight-bold">
             Experience
         </h3>
-        <b-row v-for="(job, i) of jobs" :key="i" class="block">
-            <b-col cols="4" class="job-general" align-self="baseline">
-                <h5 class="font-weight-bold">
-                    {{ job.title }}
-                </h5>
-                <small class="text-muted">{{ formatDate(job.start) }} - {{ formatDate(job.end) }}</small>
-                <div>
-                    <font-awesome-icon
-                        v-for="(icon, ii) of job.tags"
-                        :key="ii"
-                        v-b-tooltip.hover.bottom="icon"
-                        :icon="['fab', icon]"
-                        class="icon"
-                    />
-                </div>
+        <b-row v-for="(job, i) of jobs" :key="i" class="block mb-md-5">
+            <b-col cols="12" md="4" align-self="baseline">
+                <b-card class="job-general">
+                    <h5 class="font-weight-bold">
+                        {{ job.title }}
+                    </h5>
+                    <small class="text-muted">{{ formatDate(job.start) }} - {{ formatDate(job.end) }}</small>
+                    <div>
+                        <font-awesome-icon
+                            v-for="(icon, ii) of job.tags"
+                            :key="ii"
+                            v-b-tooltip.hover.bottom="icon"
+                            :icon="['fab', icon]"
+                            class="icon"
+                        />
+                    </div>
+                </b-card>
             </b-col>
-            <b-col cols="8" class="job-description" align-self="stretch">
-                <h5 class="font-weight-bold company">
-                    <a v-if="job.company.link" :href="job.company.link" target="_blank" class="text-dark">
-                        {{ job.company.name }}
-                    </a>
-                    <span v-else>
-                        {{ job.company.name }}
-                    </span>
-                </h5>
-                <p class="text-justify">
-                    {{ job.description }}
-                </p>
+            <b-col cols="12" md="8" class="job-description" align-self="stretch">
+                <b-card>
+                    <h5 class="font-weight-bold company">
+                        <a v-if="job.company.link" :href="job.company.link" target="_blank" class="text-dark">
+                            {{ job.company.name }}
+                        </a>
+                        <span v-else>
+                            {{ job.company.name }}
+                        </span>
+                    </h5>
+                    <p class="text-justify">
+                        {{ job.description }}
+                    </p>
+                </b-card>
             </b-col>
         </b-row>
     </b-container>
@@ -70,14 +74,21 @@ h5 {
 }
 
 .block {
-    margin-bottom: 60px;
-
     &:last-of-type {
         margin-bottom: 0;
     }
 
-    .job-general {
-        padding: 15px 0 15px 15px;
+    [class*="col"] {
+        padding: 0 15px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .card.job-general {
         background-color: $main-grey-bright;
 
         .icon {
@@ -87,7 +98,9 @@ h5 {
     }
 
     .job-description {
-        padding: 15px 15px 0 15px;
+        p {
+            margin-bottom: 0;
+        }
 
         h5 {
             margin-bottom: 1px;
