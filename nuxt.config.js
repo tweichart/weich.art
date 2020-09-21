@@ -18,10 +18,6 @@ export default {
             name: 'viewport',
             content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
         }, {
-            hid: 'description',
-            name: 'description',
-            content: 'PHP,JavaScript,Laravel,VueJS,Docker,Kubernetes,Programming,Symfony,Angular'
-        }, {
             name: 'twitter:card',
             content: 'summary'
         }, {
