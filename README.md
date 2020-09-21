@@ -1,5 +1,9 @@
 # Homepage
 
+## Description
+
+This project is a showcase for a static website developed with vue & nuxt with typescript & vuex.
+
 ## Setup
 
 ```bash
