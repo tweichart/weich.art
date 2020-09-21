@@ -3,13 +3,13 @@
         <b-container>
             <Banner />
         </b-container>
-        <b-container class="description">
+        <b-container>
             <Description />
         </b-container>
-        <b-container class="timeline">
+        <b-container>
             <Timeline />
         </b-container>
-        <b-container class="contact">
+        <b-container>
             <Contact />
         </b-container>
     </b-container>

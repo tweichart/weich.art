@@ -50,7 +50,7 @@ const user = namespace('user');
 
 @Component
 export default class Banner extends Vue {
-    private src: string = require('~/assets/logo_black.png');
+    private src: string = require('~/assets/img/logo_black.png');
     private ageCount: number = 0;
 
     @user.State

@@ -12,17 +12,19 @@ export interface IJob {
     tags: string[]
 }
 
+export interface IContact {
+    icon: string,
+    link: string
+}
+
 export interface IUserState {
     name: string
+    shortname: string
+    url: string
     jobtitle: string,
     birthday: Date,
     location: string,
     description: string[],
     jobs: IJob[],
     contacts: IContact[]
-}
-
-export interface IContact {
-    icon: string,
-    link: string
 }

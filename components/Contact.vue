@@ -28,6 +28,3 @@ export default class Banner extends Vue {
     }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>

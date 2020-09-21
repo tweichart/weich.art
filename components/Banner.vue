@@ -11,7 +11,7 @@
             </b-col>
         </b-row>
         <b-aspect ref="img" aspect="4096:2487" class="img-container" :style="{ left }">
-            <b-img :srcset="srcset" />
+            <b-img :srcset="srcset" alt="Banner"/>
         </b-aspect>
     </b-container>
 </template>
@@ -35,7 +35,7 @@ export default class Banner extends Vue {
     public jobtitle!: string;
 
     get srcset(): string {
-        return [800, 1280, 1920, 4096].map((s: number) => require(`~/assets/banner-${s}w.jpg`) + ` ${s}w`).join(', ');
+        return [800, 1280, 1920, 4096].map((s: number) => require(`~/assets/img/banner-${s}w.jpg`) + ` ${s}w`).join(', ');
     }
 
     setBannerOffset() {
@@ -55,6 +55,8 @@ export default class Banner extends Vue {
 </script>
 
 <style lang="scss" scoped>
+
+// use max available height for banner
 div[class^='container-'] {
     height: 100vh;
 
@@ -63,6 +65,7 @@ div[class^='container-'] {
     }
 }
 
+// shadow for better visibility over background image
 h1, h2{
     text-shadow: 0 0 3px white;
 }
@@ -72,6 +75,7 @@ h1, h2{
     z-index: 5;
 }
 
+// scroll 'over' the banner image
 .img-container {
     position: fixed;
     z-index: 2;

@@ -6,9 +6,9 @@
         <b-row v-for="(job, i) of jobs" :key="i" class="block mb-md-5">
             <b-col cols="12" md="4" align-self="baseline" class="mt-4 mt-md-0">
                 <b-card no-body class="job-general p-4">
-                    <h5 class="font-weight-bold mb-0">
+                    <h4 class="font-weight-bold mb-0">
                         {{ job.title }}
-                    </h5>
+                    </h4>
                     <small class="text-muted">
                         {{ formatDate(job.start) }} - {{ formatDate(job.end) }}
                     </small>
@@ -25,7 +25,7 @@
             </b-col>
             <b-col cols="12" md="8" class="job-description" align-self="stretch">
                 <b-card no-body class="pt-4 pb-4">
-                    <h5 class="font-weight-bold company mb-0">
+                    <h4 class="font-weight-bold company mb-0">
                         <a
                             v-if="job.company.link"
                             :href="job.company.link"
@@ -37,7 +37,7 @@
                         <span v-else>
                             {{ job.company.name }}
                         </span>
-                    </h5>
+                    </h4>
                     <p class="text-justify m-0">
                         {{ job.description }}
                     </p>
@@ -107,6 +107,10 @@ export default class Banner extends Vue {
     .icon {
         margin-right: 10px;
         cursor: pointer;
+    }
+
+    h4{
+        font-size: 1.25rem;
     }
 }
 </style>

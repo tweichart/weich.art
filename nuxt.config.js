@@ -1,10 +1,5 @@
 export default {
     /*
-    ** Nuxt rendering mode
-    ** See https://nuxtjs.org/api/configuration-mode
-    */
-    mode: 'universal',
-    /*
     ** Nuxt target
     ** See https://nuxtjs.org/api/configuration-target
     */
@@ -14,12 +9,34 @@ export default {
     ** See https://nuxtjs.org/api/configuration-head
     */
     head: {
-        title: 'Tobias Weichart',
-        meta: [
-            { charset: 'utf-8' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' },
-            { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
-        ],
+        htmlAttrs: {
+            lang: 'en'
+        },
+        meta: [{
+            charset: 'utf-8'
+        }, {
+            name: 'viewport',
+            content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        }, {
+            hid: 'description',
+            name: 'description',
+            content: 'PHP,JavaScript,Laravel,VueJS,Docker,Kubernetes,Programming,Symfony,Angular'
+        }, {
+            name: 'twitter:card',
+            content: 'summary'
+        }, {
+            name: 'twitter:site',
+            content: '@tweichart'
+        }, {
+            name: 'og:type',
+            content: 'website'
+        }, {
+            name: 'og:image:width',
+            content: '600'
+        }, {
+            name: 'og:image:height',
+            content: '600'
+        }],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
         ],
@@ -28,12 +45,12 @@ export default {
     ** Global CSS
     */
     css: [
-        '@/assets/overrides.scss',
+        '~/assets/scss/overrides.scss',
         '@fortawesome/fontawesome-svg-core/styles.css'
     ],
     styleResources: {
         scss: [
-            '~/assets/app.scss'
+            '~/assets/scss/app.scss'
         ]
     },
     /*
@@ -41,9 +58,7 @@ export default {
     ** https://nuxtjs.org/guide/plugins
     */
     plugins: [
-        '~/plugins/fontawesome.ts',
-        '~/plugins/decorators.ts',
-        '~/plugins/directives.ts'
+        '~/plugins/fontawesome.ts'
     ],
     /*
     ** Auto import components
@@ -65,8 +80,7 @@ export default {
         'bootstrap-vue/nuxt'
     ],
     bootstrapVue: {
-        css: false, // Or `css: false`
-        // bootstrapVueCSS: false // Or `bvCSS: false`
+        css: false,
     },
     /*
     ** Build configuration

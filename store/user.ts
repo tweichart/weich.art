@@ -1,7 +1,24 @@
 import { VuexModule, Module } from 'vuex-module-decorators';
-import { IUserState, ICompany } from '@/plugins/types';
+import { IUserState, IJob, ICompany, IContact } from '@/plugins/types';
 // @ts-ignore
-import { faAngular, faAws, faBitbucket, faDocker, faGit, faGithub, faGitlab, faJs, faLaravel, faLinkedinIn, faNodeJs, faPhp, faSymfony, faTwitter, faVuejs, faWikipediaW } from '@fortawesome/free-brands-svg-icons';
+import {
+    faAngular,
+    faAws,
+    faBitbucket,
+    faDocker,
+    faGit,
+    faGithub,
+    faGitlab,
+    faJs,
+    faLaravel,
+    faLinkedinIn,
+    faNodeJs,
+    faPhp,
+    faSymfony,
+    faTwitter,
+    faVuejs,
+    faWikipediaW
+} from '@fortawesome/free-brands-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 library.add(faAngular, faAws, faBitbucket, faDocker, faGit, faGithub, faGitlab, faJs, faLaravel, faLinkedinIn, faNodeJs, faPhp, faSymfony, faTwitter, faVuejs, faWikipediaW);
@@ -13,6 +30,10 @@ library.add(faAngular, faAws, faBitbucket, faDocker, faGit, faGithub, faGitlab, 
 })
 export default class User extends VuexModule implements IUserState {
     public name = 'Tobias Weichart';
+
+    public shortname = 'tweichart';
+
+    public url = 'https://www.weich.art';
 
     public jobtitle = 'Senior Software Engineer';
 
@@ -26,7 +47,7 @@ export default class User extends VuexModule implements IUserState {
         'What I\'m looking for? New challenges and a chat with you!'
     ];
 
-    public jobs = [{
+    public jobs: IJob[] = [{
         title: 'Senior Software Engineer',
         company: {
             name: 'EssentialSkillz',
@@ -38,7 +59,7 @@ export default class User extends VuexModule implements IUserState {
         tags: ['vuejs', 'laravel', 'docker', 'aws', 'bitbucket']
     }, {
         title: 'Senior Application Developer',
-        company: {
+        company: <ICompany>{
             name: 'Supply Chain Formulae'
         },
         start: new Date('2019-07'),
@@ -105,7 +126,7 @@ export default class User extends VuexModule implements IUserState {
         tags: ['wikipedia-w', 'php', 'js', 'git']
     }];
 
-    public contacts = [{
+    public contacts: IContact[] = [{
         icon: 'linkedin-in',
         link: 'https://www.linkedin.com/in/tobias-weichart'
     }, {
