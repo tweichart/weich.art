@@ -33,7 +33,7 @@ export default class User extends VuexModule implements IUserState {
 
     public shortname = 'tweichart';
 
-    public url = 'https://www.weich.art';
+    public url = 'https://weich.art';
 
     public jobtitle = 'Senior Software Engineer';
 
@@ -55,7 +55,11 @@ export default class User extends VuexModule implements IUserState {
         },
         start: new Date('2019-12'),
         end: new Date(),
-        description: 'A new start into the world of E-Learning, mostly based on PHP/VueJS and AWS!',
+        description: `A new start in the world of E-Learning! Supporting a solid and matured environment on a PHP/AWS
+        basis, I can contribute to the modernisation of the infrastructure by applying best practices in the world of
+        microservices. With Laravel for the Backend and Vue.js for the Frontend, a new and fully cloud native servicemap
+        is being created while still keeping the high quality standards up that the current platform has. By extending
+        the current environment with various tests (Unit & Selenium) we're prepared for the future as well.`,
         tags: ['vuejs', 'laravel', 'docker', 'aws', 'bitbucket']
     }, {
         title: 'Senior Application Developer',
