@@ -13,6 +13,7 @@
         <b-container>
             <Contact />
         </b-container>
+        <Footer />
     </b-container>
 </template>
 
