@@ -21,6 +21,7 @@ export interface IUserState {
     name: string
     shortname: string
     url: string
+    repo: string,
     jobtitle: string,
     birthday: Date,
     location: string,

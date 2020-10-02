@@ -1,5 +1,6 @@
 <template>
     <b-container fluid class="main">
+        <GithubLabel />
         <b-container>
             <Banner />
         </b-container>
@@ -24,10 +25,10 @@ export default class Index extends Vue {
 </script>
 <style lang="scss">
 .main{
-    .container:nth-child(even){
+    .container:nth-child(odd){
         background-color: $main-grey-bright;
     }
-    .container:nth-child(odd){
+    .container:nth-child(even){
         background-color: $main-grey-dark;
     }
     // overlay scroll effect
