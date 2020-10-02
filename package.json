@@ -1,38 +1,46 @@
 {
-  "name": "homepage",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "start": "nuxt start",
-    "export": "nuxt export",
-    "serve": "nuxt serve",
-    "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
-    "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix"
-  },
-  "dependencies": {
-    "@mdi/js": "^5.5.55",
-    "bootstrap-vue": "^2.17.0",
-    "node-sass": "^4.14.1",
-    "nuxt": "^2.14.5",
-    "sass-loader": "^10.0.2"
-  },
-  "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-brands-svg-icons": "^5.14.0",
-    "@fortawesome/vue-fontawesome": "2",
-    "@nuxt/types": "^2.14.5",
-    "@nuxt/typescript-build": "^2.0.0",
-    "@nuxtjs/eslint-config-typescript": "^2.0.0",
-    "@nuxtjs/style-resources": "^1.0.0",
-    "@typescript-eslint/parser": "^3.7.0",
-    "eslint": "^7.2.0",
-    "fontsource-kumbh-sans": "^3.0.1",
-    "nuxt-property-decorator": "^2.7.2",
-    "vue-class-component": "^7.2.5",
-    "vue-light-timeline": "^1.0.3",
-    "vuex-module-decorators": "^0.17.0"
-  }
+    "name": "weich.art",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Portfolio code for a Vuejs/Nuxtjs/TypeScript implementation of a website.",
+    "homepage": "https://github.com/tweichart/weich.art",
+    "author": {
+        "name": "Tobias Weichart",
+        "email": "tobias.weichart@gmail.com",
+        "url": "https://weich.art"
+    },
+    "repository": "github:tweichart/weich.art",
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "generate": "nuxt generate",
+        "start": "nuxt start",
+        "export": "nuxt export",
+        "serve": "nuxt serve",
+        "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+        "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix"
+    },
+    "dependencies": {
+        "@mdi/js": "^5.5.55",
+        "bootstrap-vue": "^2.17.0",
+        "node-sass": "^4.14.1",
+        "nuxt": "^2.14.5",
+        "sass-loader": "^10.0.2"
+    },
+    "devDependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.30",
+        "@fortawesome/free-brands-svg-icons": "^5.14.0",
+        "@fortawesome/vue-fontawesome": "2",
+        "@nuxt/types": "^2.14.5",
+        "@nuxt/typescript-build": "^2.0.0",
+        "@nuxtjs/eslint-config-typescript": "^2.0.0",
+        "@nuxtjs/style-resources": "^1.0.0",
+        "@typescript-eslint/parser": "^3.7.0",
+        "eslint": "^7.2.0",
+        "fontsource-kumbh-sans": "^3.0.1",
+        "nuxt-property-decorator": "^2.7.2",
+        "vue-class-component": "^7.2.5",
+        "vue-light-timeline": "^1.0.3",
+        "vuex-module-decorators": "^0.17.0"
+    }
 }
