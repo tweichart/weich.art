@@ -29,3 +29,7 @@ export interface IUserState {
     jobs: IJob[],
     contacts: IContact[]
 }
+
+export interface ILinks {
+    [key: string]: string
+}

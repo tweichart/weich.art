@@ -21,10 +21,11 @@
 /* eslint-disable quote-props */
 
 import { Vue, Component } from 'vue-property-decorator';
+import { ILinks } from '~/plugins/types';
 
 @Component
 export default class Footer extends Vue {
-    private links: string[] = {
+    private links: ILinks = {
         'Vue.js': 'https://vuejs.org/',
         'Nuxt.js': 'https://nuxtjs.org/',
         'TypeScript': 'https://www.typescriptlang.org/',
