@@ -1,5 +1,6 @@
 <template>
     <b-container fluid class="main">
+        <GithubLabel />
         <b-container>
             <Banner />
         </b-container>

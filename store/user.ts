@@ -35,6 +35,8 @@ export default class User extends VuexModule implements IUserState {
 
     public url = 'https://weich.art';
 
+    public repo = 'https://github.com/tweichart/weich.art';
+
     public jobtitle = 'Senior Software Engineer';
 
     public birthday = new Date('1989-02');
