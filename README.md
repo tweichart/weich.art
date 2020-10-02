@@ -15,11 +15,11 @@ $ yarn install
 
 ```bash
 # serve with hot reload at localhost:3000
-$ nuxt dev
+$ npm run dev
 
 # generate static project
-$ nuxt generate 
+$ npm run generate 
 
 # start server
-$  nuxt start
+$ npm run start
 ```
