@@ -10,7 +10,7 @@
                         {{ job.title }}
                     </h4>
                     <small class="text-muted">
-                        {{ formatDate(job.start) }} - {{ formatDate(job.end) }}
+                        {{ formatDate(job.start, false) }} - {{ formatDate(job.end) }}
                     </small>
                     <div class="mt-4">
                         <font-awesome-icon
@@ -58,9 +58,12 @@ export default class Banner extends Vue {
     @user.State
     public jobs!: IJob[];
 
-    formatDate(date: Date): string {
+    formatDate(date: Date, presentReplace: boolean = true): string {
         const today: Date = new Date();
-        if (today.getFullYear() === date.getFullYear() && today.getMonth() === date.getMonth()) {
+        if (presentReplace &&
+            today.getFullYear() === date.getFullYear() &&
+            today.getMonth() === date.getMonth()
+        ) {
             return 'present';
         }
         const month: number = date.getMonth() + 1;
@@ -74,7 +77,8 @@ export default class Banner extends Vue {
     // remove margin for last block
     &:last-of-type {
         margin-bottom: 0;
-        & > .job-description > .card{
+
+        & > .job-description > .card {
             padding-bottom: 10px !important;
         }
     }
@@ -109,7 +113,7 @@ export default class Banner extends Vue {
         cursor: pointer;
     }
 
-    h4{
+    h4 {
         font-size: 1.25rem;
     }
 }
