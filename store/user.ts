@@ -52,16 +52,27 @@ export default class User extends VuexModule implements IUserState {
     public jobs: IJob[] = [{
         title: 'Senior Software Engineer',
         company: {
+            name: 'TitanHQ',
+            link: 'https://www.titanhq.com/'
+        },
+        start: new Date('2020-12'),
+        end: new Date(),
+        description: `A new start in the world of Email Security, DNS Filtering and Email Archiving! New adventures
+        await me here.`,
+        tags: ['vuejs', 'laravel', 'docker', 'aws', 'gitlab']
+    }, {
+        title: 'Senior Software Engineer',
+        company: {
             name: 'EssentialSkillz',
             link: 'https://www.essentialskillz.com/'
         },
         start: new Date('2019-12'),
-        end: new Date(),
-        description: `A new start in the world of E-Learning! Supporting a solid and matured environment on a PHP/AWS
-        basis, I can contribute to the modernisation of the infrastructure by applying best practices in the world of
-        microservices. With Laravel for the Backend and Vue.js for the Frontend, a new and fully cloud native servicemap
-        is being created while still keeping the high quality standards up that the current platform has. By extending
-        the current environment with various tests (Unit & Selenium) we're prepared for the future as well.`,
+        end: new Date('2020-11'),
+        description: `Supporting a solid and matured environment on a PHP/AWS basis, I can contribute to the
+        modernisation of the infrastructure by applying best practices in the world of microservices. With Laravel for
+        the Backend and Vue.js for the Frontend, a new and fully cloud native servicemap is being created while still
+        keeping the high quality standards up that the current platform has. By extending the current environment with
+        various tests (Unit & Selenium) we're prepared for the future as well.`,
         tags: ['vuejs', 'laravel', 'docker', 'aws', 'bitbucket']
     }, {
         title: 'Senior Application Developer',
