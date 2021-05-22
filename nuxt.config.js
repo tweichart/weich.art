@@ -60,9 +60,12 @@ export default {
     ** Auto import components
     ** See https://nuxtjs.org/api/configuration-components
     */
-    components: [
-        '~/components/blocks'
-    ],
+    components: {
+        dirs: [
+            '~/components',
+            '~/components/blocks'
+        ],
+    },
     /*
     ** Nuxt.js dev-modules
     */
