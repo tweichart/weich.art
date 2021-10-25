@@ -23,3 +23,12 @@ $ npm run generate
 # start server
 $ npm run start
 ```
+
+## Deployment
+
+As this project generates static sites it can be run on any hoster, e.g. S3/CloudFront etc.
+
+## TODO
+
+* [ ] Update to Vue3
+* [ ] Update to NuxtJs3
