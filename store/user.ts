@@ -50,15 +50,33 @@ export default class User extends VuexModule implements IUserState {
     ];
 
     public jobs: IJob[] = [{
+        title: 'Technical Lead - API',
+        company: {
+            name: 'TitanHQ',
+            link: 'https://www.titanhq.com/'
+        },
+        start: new Date('2021-12'),
+        end: new Date(),
+        description: `After the success of the initial phase of the rewriting of the first projects I've transitioned
+        to a more general role. Here I'm able to oversee the general architecture of the APIs and their (micro)service
+        layout, guiding the path for future developments of a general SaaS platform. Still being involved with the
+        Frontend development to some degree, this role helps me to perfectly combine Front- and Backend development
+        to create an overall solution together with a highly skilled and qualified team.`,
+        tags: ['vuejs', 'laravel', 'docker', 'aws', 'gitlab']
+    }, {
         title: 'Senior Software Engineer',
         company: {
             name: 'TitanHQ',
             link: 'https://www.titanhq.com/'
         },
         start: new Date('2020-12'),
-        end: new Date(),
-        description: `A new start in the world of Email Security, DNS Filtering and Email Archiving! New adventures
-        await me here.`,
+        end: new Date('2021-11'),
+        description: `Diving into the world of Cyber Security, I could use my knowledge of Laravel & Vue.js to move the 
+        software to the next level. Building on top of a matured and stable environment the refactoring of the APIs
+        and re-implementation of major parts of the products was one of the main goals. Supporting this refactoring by
+        unit tests helped to create a stable and future proof implementation. The developed architecture patterns can
+        and will be used across multiple products as well to get a general cloud based solution that scales with it's 
+        needs.`,
         tags: ['vuejs', 'laravel', 'docker', 'aws', 'gitlab']
     }, {
         title: 'Senior Software Engineer',
